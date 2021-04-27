@@ -56,6 +56,20 @@ def bernoulli(n):
     F = Fraction(B(n)).limit_denominator(9999)
     return F.numerator,F.denominator
 
-
 for i in range(100):
     print("{} {}".format(i,bernoulli(i)))
+    
+    from math import factorial
+from fractions import Fraction as Fr
+ 
+# The following code passes all tests, it's directly addapted from Rosseta Code, only change is B(1)'s sign
+# https://rosettacode.org/wiki/Bernoulli_numbers#Python:_Using_task_algorithm
+# def bernoulli(n):
+#    if n==1:
+#        return -1, 2
+#    A = [0] * (n+1)
+#    for m in range(n+1):
+#        A[m] = Fr(1, m+1)
+#        for j in range(m, 0, -1):
+#          A[j-1] = j*(A[j-1] - A[j])
+#    return A[0].numerator,A[0].denominator # (which is Bn)
